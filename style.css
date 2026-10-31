@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #52616d;
+  background: #ffffff;
+}
+
+.navbar {
+  width: min(100% - 64px, 1120px);
+  min-height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  color: #465866;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #71808b;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #08a5f5;
+}
+
+.username {
+  padding: 13px 17px;
+  border-radius: 13px;
+  background: #e8f7ff;
+  color: #079eea;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* Hamburger menu button — hidden until mobile breakpoint */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.menu-icon {
+  font-size: 26px;
+  line-height: 1;
+  color: #52616d;
+}
+
+/* Mobile slide-in menu — CSS-only, driven by :focus on the button */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 65%;
+  max-width: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: #000000;
+  z-index: 10;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: #08a5f5;
+}
+
+/* A is a sibling of B: .menu-btn (B) focused shows .mobile-menu (A) */
+.menu-btn:focus + .mobile-menu {
+  display: flex;
+}
+
+.hero {
+  width: min(100% - 64px, 1040px);
+  min-height: 470px;
+  margin: 22px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+}
+
+.hero-content {
+  flex: 1 1 52%;
+  max-width: 530px;
+}
+
+.hero-content h1 {
+  color: #52616d;
+  font-size: clamp(30px, 3.1vw, 39px);
+  line-height: 1.28;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #08a5f5;
+}
+
+.hero-content p {
+  max-width: 490px;
+  margin-top: 8px;
+  color: #9aa6b2;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.cta {
+  display: inline-flex;
+  min-height: 54px;
+  min-width: 190px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 26px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background: linear-gradient(100deg, #079ff0, #35b6f4);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #078ed8;
+}
+
+.hero-image {
+  flex: 1 1 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  display: block;
+  width: min(100%, 440px);
+  height: auto;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 48px);
+    min-height: 72px;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .username {
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+
+  .hero {
+    width: calc(100% - 48px);
+    min-height: 430px;
+    gap: 18px;
+  }
+
+  .hero-content {
+    flex-basis: 54%;
+  }
+
+  .hero-content h1 {
+    font-size: 29px;
+    line-height: 1.25;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cta {
+    min-height: 50px;
+    min-width: 175px;
+    margin-top: 24px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    flex-basis: 46%;
+  }
+
+  .hero-image img {
+    width: min(100%, 330px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    width: calc(100% - 32px);
+    min-height: 68px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .username {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero {
+    width: calc(100% - 36px);
+    min-height: auto;
+    margin-top: 28px;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 500px;
+    order: 1;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.2;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .hero-content p {
+    margin: 12px auto 0;
+    font-size: 14px;
+  }
+
+  .cta {
+    margin-top: 20px;
+  }
+
+  .hero-image {
+    width: 100%;
+    order: 2;
+  }
+
+  .hero-image img {
+    width: min(82%, 300px);
+  }
+}
